@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/*googleips 웹폰트 css 파일 불러오기*/
+@import url(https://fonts.googleapis.com/css?family=Galada|Nanum+Gothic|Nanum+Myeongjo);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url(//db.onlinewebfonts.com/c/29dc27977e417a98e56556776f41607c?family=Corbel);
+/*
+<link href="//db.onlinewebfonts.com/c/29dc27977e417a98e56556776f41607c?family=Corbel" rel="stylesheet" type="text/css"/>
+
+@font-face {font-family: "Corbel"; src: url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.eot"); src: url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.woff") format("woff"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/29dc27977e417a98e56556776f41607c.svg#Corbel") format("svg"); }
+*/
+
+/*
+font-family: 'Noto Sans KR', sans-serif;
+*/
+
+/*font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Nanum Myeongjo', serif;
+font-family: 'Galada', cursive; */
+
+/* 저장된 글꼴 파일 선언*/
+/* @font-face { font-family : font_gothic;    
+                src : url(../font/NanumGothic.ttf); }  */ /* .woff가 가장 표준 */
+
+@font-face{font-family:Century gothic; src:local(../font/CenturyGothic.woff);
+
+/* 웹사이트의 글꼴 파일 선언*/
+/* @font-face { font-family : font_gothic;    
+                src : url(http://uhbee.com/nanum.eot) ; }   */
+
+/* 파일이름은 영어, 숫자, 언더바 */
+
+* {margin:0; padding:0;}
+html{font-size:16px;} /* 반응형 rem 이용 */
+body{ font-size:16px;
+      color:#6f6f6f;
+      font-family: 'Noto Sans KR', sans-serif; }
+ul, ol, li{list-style-type:none}
+img, fieldset{border:none;vertical-align: middle}
+hr {clear:both;border:none}
+a {color:inherit;text-decoration:none;
+   outline:0;}
+table{border-collapse:collapse}
+input, textarea, 
+input::placeholder, textarea::placeholder {
+       color:inherit;font-size:inherit;
+       font-family:inherit;
+       vertical-align: middle;
+       outline:0;}
+button{outline:0}
+
+.sound_only{display:block; text-indent:-999999999%;height:0;} /* 웹접근성 */
+
+/*************************************메인, 서브 공통영역*************************************/
+#wrap{width:100%;min-width:1024px;overflow:hidden;}
+.inner{min-width:1024px;max-width:1280px;margin: 0 auto} /* 1024~1280 사이에서는 크기가 100%이다 */
+#header .top_icon{float:right;
+      width:300px; height:75px;
+      background-color:transparent;}

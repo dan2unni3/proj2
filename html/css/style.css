@@ -1,0 +1,73 @@
+.inner{width:1200px; margin: 0 auto;}
+
+#wrap{width:100%;min-width:1200px;}
+#header{}
+#section{}
+#footer{}
+
+/*********************header****************************/
+#nav2 .depth1{z-index:98;}/*네비1보다 작아야 함*/
+#nav2 .depth1 ul{border-left:1px solid #ccc;
+                 border-bottom:1px solid #ccc;
+                 height:0;overflow:hidden;
+                 opacity:0;
+                 transition:0.5s;
+                 background-color:#fff;
+                 padding:10px;
+                box-sizing:border-box;}
+                /* 마진, 패딩 등 넣으면 box-sizing 하는 걸로 생각해 */
+#nav2 .depth1 > li:last-child ul{border-right:1px solid #ccc;}
+#nav2 .depth1:hover ul{height:300px;opacity:1;} /* .depth1 li:hover가 아니라 */
+/*  [방법2] 
+#nav2 .depth1{z-index:98;height:30px; overflow:hidden;}
+#nav2 .depth1:hover{height:300px; opacity:1;}
+#nav2 .depth1 ul{border-left:1px solid #ccc;
+                 border-bottom:1px solid #ccc;
+                 height:270px;}
+
+overflow:hidden 은 언제 쓰는가?
+*/
+
+/*********************sec1****************************/
+/*********************sec2****************************/
+#sec2{background:url(../images/flower_01.jpg) no-repeat;
+    background-size: cover;
+    width:100%;padding-top:330px;padding-bottom:140px;}
+#sec2 .inner{background-color:transparent;
+            border: 3px solid rgb(169, 192, 132);height:500px;}
+#sec2 .txt_box p{color:white;}
+#sec2 .txt_box{float:right;width:550px; height:300px;}
+
+#sec2 h6{color:rgb(169, 192, 132);font-size:2rem;
+        padding-top:20px; padding-bottom:20px;}
+#sec2:after{content:'';display:block; clear:both;}
+
+/*********************sec3****************************/
+#sec3 .about-slide-wrap {
+    padding-left: calc(160px - (1920px - 100vw) / 2);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: left 1s ease;}
+
+#sec3 .wrapper {
+        width: 100%;
+        max-width: 1600px;
+        margin: 0 auto;
+        position: relative;}
+
+#sec3 .in-bx {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 765px;
+        text-align: center;
+        transition: width 1s ease;}
+
+/*********************footer****************************/
+#footer{height:100px;background-color: rgb(187, 202, 161)}
+#footer p{color:#fff;
+          text-align: center;  
+          line-height:100px;}
