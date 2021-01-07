@@ -42,40 +42,71 @@ button{outline:0}
 .sound_only{display:block; text-indent:-999999999%;height:0;} /* 웹접근성 */
 
 /*************************************메인영역*************************************/
-/* 공통디자인 */
-nav{
-      margin-bottom:200px;}
-nav .inner{
-      position:relative;}
-nav .depth1{
-      position:absolute;top:50px;width:100%;left:0;}
-nav .depth1 ul{}
-nav .depth1 > li{
-      width:10%;float:left;}
-nav .depth1 > li > a{
-      display:block;background-color:lightblue; 
-      height:100px;
-      text-align:center;
-      font-size:1.125rem;color:#474040;
-      padding-top:5px; padding-bottom:5px;}
+#wrap{width:100%;min-width:1024px;overflow:hidden;}
+.inner{min-width:1024px;max-width:1280px;margin: 0 auto} /* 1024~1280 사이에서는 크기가 100%이다 */
+#header .top_icon{float:right;
+      width:300px; height:75px;
+      background-color:transparent;}
 
-/* 네비2 */         
-#nav2 .depth1{
-      z-index:98;}
-#nav2 .depth1 ul{
-      border-left:1px solid #ccc;
-      border-bottom:1px solid #ccc;
-      height:0;overflow:hidden;
-      opacity:0;
-      transition:0.5s;
-      background-color:#fff;
-      padding:10px;}
-#nav2 .depth1 > li:last-child ul{
-      border-right:1px solid #ccc;}
-#nav2 .depth1:hover ul{
-      height:300px;opacity:1;}
 
-#nav2 .ul_right > a{
-      float:left;}
-.h_right{
-      float:right;}
+    /* 네비4 - 메가네비100% */
+      #header .inner{position:relative;}
+      #nav4 .depth1{position:absolute;top:0px;left:0;}
+
+      #nav4 .depth1 > li{float:left;padding:0 20px}
+      #nav4 .depth1 > li > a{display:block;background-color:transparent;
+                              text-align:center; font-size:1.125rem;color:#333; 
+                              line-height:75px;/*라인하이트 쓸 거니까 패딩 뺀다*/}
+      #nav4 .depth1 > li > a:after{content:'';height:3px;background-color:#652c81;
+                                         position:relative;width:0px;display:block;
+                                         transition:0.5s;}
+      #nav4 .depth1 > li:hover > a:after{width:100%;}
+      /* #nav4 .depth1 > li:hover > a{border-bottom:3px solid orange;} */
+
+
+    #nav4{position:relative;}
+    
+    #nav4 .depth1{position:static;float:left;} /* position:static 그대로?????? */
+    #nav4 .nav_box{position:absolute;
+                  /* top:calc(2.8rem + 20px); */; top:78px;
+                  left:0 ;width:100% ;background-color:#000; opacity:60%;
+                  z-index:96;
+                  display:none; padding:10px 0;}
+                   /*display:none으로 안 보이게 한 건 display:block으로 살려야 */
+    #nav4 .depth1 > li:hover .nav_box{display:block;}
+
+    #nav4 .nav_box .depth2{width:100%;margin:0 auto;
+                           position:relative;/*text-align:center;*/
+                           padding-left:100px;box-sizing:border-box;}
+    #nav4 .nav_box .depth2:after{content:'';display:none;clear:both;}
+    #nav4 .depth2 > li{display:inline-block;box-sizing:border-box;
+                       padding:10px;} /* 오답노트 - width :20% 삭제 */
+    #nav4 .depth2 > li > a {font-size:0.9375rem;color:#fff;}
+
+    #nav4 .depth2 > li:after{content:'';display:inline-block;width:5px;height:5px;
+                             background-color:#ba965a;border-radius:50%;
+                             margin-left:20px;transform:translate(0,-3px)}
+    #nav4 .depth2 > li:last-child:after{display:none;}
+
+/*header*/
+#header #logo{float:left;display:block;}
+#logo img{width:173px;height:36.5px;
+          margin-top:15px;}
+#header #nav4{float:right;}
+
+
+/*footer*/
+#footer{
+      display:inline-block;
+      height:352px;
+      background-color:#ccc;}
+#footer ul li{
+      float:left; color:#000;
+      font-size:0.875rem;
+      border-right:1px solid #000;
+      padding-left:10px;
+      padding-right:10px;}
+#footer ul li:last-child{border-right:none;}
+#footer .f_logo{width:400px;border-right:none;}
+#footer img{width:50%;}
+#footer .f_info{}

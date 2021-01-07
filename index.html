@@ -12,107 +12,113 @@
    <![endif]-->
 <link href="css/common.css" rel="stylesheet" type="text/css"> <!--컨트롤 클릭-->
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<!-- <script src="js/jquery-3.1.1.min.js"></script> 제이쿼리-->
+<link href="./css/slick.css" rel="stylesheet" type="text/css" > <!--슬릭+파일복사+열어보기-->
+   
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-3.0.0.js"></script> <!--마이그레이트-->
+<script src="./js/slick.js" type="text/javascript" charset="utf-8"></script> <!--슬릭+파일복사+열어보기-->
+<script src="js/slide.js"></script> <!--별도 파일로 제작--><!--js는 어느 줄에 넣는지 중요-->
 
 </head>
 
 <body>
 <div id="wrap">
     <!------------header------------------>
-  <header id="header">
+    <header id="header">
+        <h1 id="logo">
+          <a href="index.html"><img src="images/logo.png" alt="로고"></a>
+        </h1>
+        <!--03웹표준>애니메이션 연습>-->
+        <nav id="nav4">
+            <ul class="depth1" >
+                <li><a href="#">WOMEN</a>
+                  <div class="nav_box">
+                      <ul class="depth2">
+                       <li><a href="#">스타피부과이념</a>
+                       </li>
+                       <li><a href="#">연혁</a>
+                       </li>
+                       <li><a href="#">의료진소개</a>
+                       </li>
+                       <li><a href="#">채용안내</a>
+                       </li>
+                       <li><a href="#">시설소개</a>
+                       </li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="#">MEN</a>
+                  <div class="nav_box">
+                      <ul class="depth2">
+                       <li><a href="#">스타소식</a>
+                       </li>
+                       <li><a href="#">공지사항</a>
+                       </li>
+                       <li><a href="#">시술후기</a>
+                       </li>
+                       <li><a href="#">전후사진</a>
+                       </li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="#">KIDS</a>
+                  <div class="nav_box">
+                    <ul class="depth2">
+                     <li><a href="#">스타소식</a>
+                     </li>
+                     <li><a href="#">공지사항</a>
+                     </li>
+                     <li><a href="#">시술후기</a>
+                     </li>
+                     <li><a href="#">전후사진</a>
+                     </li>
+                  </ul>
+                </div>
+                </li>
+                <li><a href="#">GEARS</a>
+                  <div class="nav_box">
+                      <ul class="depth2">
+                       <li><a href="#">여드름</a>
+                       </li>
+                       <li><a href="#">흉터모공</a>
+                       </li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="#">INSIDE PATAGONIA</a>
+                  <div class="nav_box">
+                      <ul class="depth2">
+                       <li><a href="#">여드름</a>
+                       </li>
+                       <li><a href="#">흉터모공</a>
+                       </li>
+                    </ul>
+                  </div>
+                </li>
+            </ul>
+            <div class="top_icon">
+              <a class="icon1" href="#"><img src="images/icon1.png" alt="햄버거버튼"></a>
+              <ul>
+                <li><a href="#"><!--img--></a></li>
+                <li><a href="#">CART</a></li>
+                <li><a href="#">LOGIN</a></li>
+                <li><a href="#">JOIN</a></li>
+              </ul>
+            </div>
+        </nav>
+      
+    </header>
 
-    <h1 id="logo">
-      <a href="index.html"><img src="images/logo.png" alt="로고"></a>
-    </h1>
+      <!------------section------------------>
+    <section id="sec1" class="lazy slider" data-sizes="50vw">
+      <div>
+        <img data-lazy="http://placehold.it/350x300?text=1-350w" data-srcset="images/mainslide1.png" data-sizes="100vw">
+      </div>
+      <div>
+        <img data-lazy="http://placehold.it/350x300?text=2-350w" data-srcset="http://placehold.it/650x300?text=2-650w 650w, http://placehold.it/960x300?text=2-960w 960w" data-sizes="100vw">
+      </div>
+    </section>
 
-    <nav id="nav2" class="navi">
-      <div class="inner">
-        <div>
-          <ul class="depth1" >
-              <li><a href="#">WOMEN</a>
-                <ul>
-                    <li><a href="#">계좌조회</a></li>
-                    <li><a href="#">거래내역조회</a></li>
-                    <li><a href="#">전자어음조회</a></li>
-                    <li><a href="#">에스크로조회</a></li>
-                    <li><a href="#">수표어음조회</a></li>
-                    <li><a href="#">어카운트인포</a></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-                  </ul>
-              </li>
-              <li><a href="#">MEN</a>
-                  <ul>
-                      <li><a href="#">계좌이체</a></li>
-                      <li><a href="#">이체결과조회</a></li>
-                      <li><a href="#">자동이체</a></li>
-                      <li><a href="#">에스크로이체</a></li>
-                      <li><a href="#">자동이체서비스</a></li>
-                  </ul>
-              </li>
-              <li><a href="#">KIDS</a>
-                  <ul>
-                      <li><a href="#">MY공과금</a></li>
-                      <li><a href="#">지로/생활요금/CMS</a></li>
-                      <li><a href="#">지방세</a></li>
-                      <li><a href="#">4대보험료</a></li>
-                      <li><a href="#">국세/관세</a></li>
-                      <li><a href="#">기금/국고</a></li>
-                      <li><a href="#">범칙/벌과금</a></li>
-                      <li><a href="#">대학등록금</a></li>
-            <li></li>
-            <li></li>                  
-                  </ul>
-              </li>
-              <li><a href="#">GEARS</a>
-                  <ul>
-                      <li><a href="#">제증명발급</a></li>
-                      <li><a href="#">계좌관리</a></li>
-                      <li><a href="#">이체관리</a></li>
-                      <li><a href="#">인터넷 뱅킹관리</a></li>
-                      <li><a href="#">통지서비스</a></li>
-                      <li><a href="#">통합ID서비스</a></li>
-                      <li><a href="#">이용안내</a></li>
-            <li></li>
-            <li></li>
-            <li></li>
-                  </ul>
-              </li>
-              <li><a href="#">INSIDE PATAGONIA</a>
-                  <ul>
-                      <li><a href="#">예금</a></li>
-                      <li><a href="#">펀드</a></li>
-                      <li><a href="#">대출</a></li>
-                      <li><a href="#">신탁</a></li>
-                      <li><a href="#">ISA</a></li>
-                      <li><a href="#">보험/공제</a></li>
-                      <li><a href="#">골드</a></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-                  </ul>
-              </li>
-          </ul>
-        </div>
-        
-        <div class="h_right">
-          <div class="search">
-            <form></form>
-          </div>
-          <ul class="ul_right">
-            <li><a href="#">CART</a></li>
-            <li><a href="#">LOGIN</a></li>
-            <li><a href="#">JOIN</a></li>
-          </ul>
-        </div>
-
-      </div>        
-    </nav>
-  </header>
-    <!------------section------------------>
   <section></section>
     <!------------footer------------------>
   <footer id="footer">
