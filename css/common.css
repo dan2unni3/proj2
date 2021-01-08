@@ -51,25 +51,27 @@ button{outline:0}
 
     /* 네비4 - 메가네비100% */
       #header .inner{position:relative;}
-      #nav4 .depth1{position:absolute;top:0px;left:0;}
+      #nav4 .depth1{float:left;/*position:absolute;top:0px;left:0;*/}
 
       #nav4 .depth1 > li{float:left;padding:0 20px}
-      #nav4 .depth1 > li > a{display:block;background-color:transparent;
-                              text-align:center; font-size:1.125rem;color:#333; 
+      #nav4 .depth1 > li > a{display:block;
+                              text-align:center; font-size:1.125rem;color:#474040; 
                               line-height:75px;/*라인하이트 쓸 거니까 패딩 뺀다*/}
-      #nav4 .depth1 > li > a:after{content:'';height:3px;background-color:#652c81;
+      #nav4 .depth1 > li > a:after{content:'';height:3px;background-color:#474040;
                                          position:relative;width:0px;display:block;
                                          transition:0.5s;}
       #nav4 .depth1 > li:hover > a:after{width:100%;}
       /* #nav4 .depth1 > li:hover > a{border-bottom:3px solid orange;} */
 
 
-    #nav4{position:relative;}
+    #nav4{position:relative;background-color:transparent;}
     
-    #nav4 .depth1{position:static;float:left;} /* position:static 그대로?????? */
+    #nav4 .depth1{
+          position:static;float:left;/* position:static 그대로?????? */
+          } 
     #nav4 .nav_box{position:absolute;
                   /* top:calc(2.8rem + 20px); */; top:78px;
-                  left:0 ;width:100% ;background-color:#000; opacity:60%;
+                  left:0 ;width:100% ;background-color:#fff; opacity:60%;
                   z-index:96;
                   display:none; padding:10px 0;}
                    /*display:none으로 안 보이게 한 건 display:block으로 살려야 */
@@ -81,19 +83,73 @@ button{outline:0}
     #nav4 .nav_box .depth2:after{content:'';display:none;clear:both;}
     #nav4 .depth2 > li{display:inline-block;box-sizing:border-box;
                        padding:10px;} /* 오답노트 - width :20% 삭제 */
-    #nav4 .depth2 > li > a {font-size:0.9375rem;color:#fff;}
+    #nav4 .depth2 > li > a {font-size:0.9375rem;color:#474040;}
 
     #nav4 .depth2 > li:after{content:'';display:inline-block;width:5px;height:5px;
                              background-color:#ba965a;border-radius:50%;
                              margin-left:20px;transform:translate(0,-3px)}
     #nav4 .depth2 > li:last-child:after{display:none;}
 
-/*header*/
-#header #logo{float:left;display:block;}
-#logo img{width:173px;height:36.5px;
-          margin-top:15px;}
-#header #nav4{float:right;}
 
+    #nav4 .h_right #req_frm{
+          display:inline-block;}
+
+}
+    #nav4 .h_right > li > a{
+          margin-right:16px;
+    }
+    #nav4 .h_right > li{
+          float:left;
+          font-size: 0.8125rem;
+          color:#474040;
+    }
+
+    #nav4 .top_icon{
+      background-color:yellow;}
+
+
+/*header*/
+#header{
+      position:fixed;
+      width:100%;
+      min-width:1024px;
+      left:0;top:0;
+      z-index:999999;}
+#header #logo{
+      float:left;
+      display:block;}
+#logo img{
+      width:173px;/*높이 삭제*/
+      margin-left:3%;
+      margin-top:15px;}
+#header #nav4{
+      float:right;
+      width:calc(90% - 173px);}
+
+
+@media all and (max-width:1180px) {
+      #header #nav4{float:right;width:calc(97% - 173px);}  
+}
+@media all and (max-width:1096px) {
+      #logo img{width:150px}
+}
+
+
+#req_frm .inline input{
+      width:100%; 
+      height:1.5em;
+      background:none; 
+      border:none;
+      outline:0; /* 텍스트 입력시 테두리 없애기 */ }
+  
+#req_frm .inline input::placeholder, #req_frm .multiline textarea::placeholder{
+      color:#000;}
+#req_frm .multiline textarea{
+      width:100%; 
+      height:5em;
+      background:none; 
+      border:none;
+      outline:0;}
 
 /*footer*/
 #footer{
