@@ -120,7 +120,12 @@
 
 /**********************Doyon**********************/
 #mainslide.slider{clear:both;}
-#mainslide .slick-slide img{width:100%;} /* 같이 커졌다 작아졌다 하는 애들은 % */
+
+#mainslide .slick-slide{position:relative}
+/* .slick-slide img에는 float이나 position 주지 않는다 */
+#mainslide .slick-slide img{
+    width:100%;
+    display:block;} /* 같이 커졌다 작아졌다 하는 애들은 % */
 #mainslide .slick-arrow{position:absolute;top:50%;z-index:99999;}
 #mainslide .slick-prev{
     right:100px;
@@ -128,10 +133,23 @@
 #mainslide .slick-next{
     right:50px;
     background:none;border:none;}
-#mainslide .slick-dots{position:absolute;right:100px;}
+#mainslide .slick-dots{
+    position:absolute;
+    right:100px;
+    bottom:100px;}
 #mainslide .slick-dots li{display:inline-block;}
-#mainslide .slick-dots li button{text-indent:-99999999px;}
-#mainslide .slick-dots li.slick-active button{}
+#mainslide .slick-dots li button{
+    width:30px;
+    height:30px;
+    text-indent:-99999999px;
+    background: none;
+    border:1px solid #ccc;
+    border-radius:50%;}
+#mainslide .slick-dots li.slick-active button{
+    border-color:orange;
+    width:35px;
+    height:35px;
+}
 #mainslide .txt_box{
     position:absolute;
     left:50px;top:50px;
@@ -145,8 +163,19 @@
     min-height: 1px;*/
 }
 
-#sec5 .regular{width:1100px;}
-#sec5 .slick-slide{margin-right:20px;}
-#sec5 .slick-arrow{position:absolute;top:0;z-index:9999;}
-#sec5 .slick-prev{left:0px;}
-#sec5 .slick-next{left:150px;}
+#sec3 .slick-slide{
+    text-align: center;
+}
+#sec3 .slick-slide img{
+    width:100%; /* calc(100% - 100px) */
+    margin:0 auto;
+}
+#sec3 .slick-arrow{
+    position:absolute;
+    bottom:0;
+    z-index:9999;}
+#sec3 .slick-prev{
+    left:0px;}
+#sec3 .slick-next{
+    left:150px;
+    display:none;}

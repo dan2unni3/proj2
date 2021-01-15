@@ -42,8 +42,11 @@ button{outline:0}
 .sound_only{display:block; text-indent:-999999999%;height:0;} /* 웹접근성 */
 
 /*************************************메인영역*************************************/
-#wrap{width:100%;min-width:1024px;overflow:hidden;}
-.inner{min-width:1024px;max-width:1280px;margin: 0 auto} /* 1024~1280 사이에서는 크기가 100%이다 */
+#wrap{width:100%;
+      min-width:1200px;
+      overflow:hidden;}
+/* .inner{min-width:1024px;max-width:1280px;margin: 0 auto}*/
+/* 1024~1280 사이에서는 크기가 100%이다 */
 #header .top_icon{float:right;
       width:300px; height:75px;
       background-color:transparent;}
@@ -94,7 +97,6 @@ button{outline:0}
     #nav4 .h_right #req_frm{
           display:inline-block;}
 
-}
     #nav4 .h_right > li > a{
           margin-right:16px;
     }
@@ -112,7 +114,7 @@ button{outline:0}
 #header{
       position:fixed;
       width:100%;
-      min-width:1024px;
+      min-width:1200px;
       left:0;top:0;
       z-index:999999;}
 #header #logo{
