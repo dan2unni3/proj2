@@ -121,34 +121,52 @@
 /**********************Doyon**********************/
 #mainslide.slider{clear:both;}
 
-#mainslide .slick-slide{position:relative}
+#mainslide .slick-slide{position:relative;}
 /* .slick-slide img에는 float이나 position 주지 않는다 */
 #mainslide .slick-slide img{
     width:100%;
     display:block;} /* 같이 커졌다 작아졌다 하는 애들은 % */
-#mainslide .slick-arrow{position:absolute;top:50%;z-index:99999;}
+#mainslide .slick-arrow{
+    position:absolute;
+    top:50%;z-index:99999;
+    cursor:pointer;}
 #mainslide .slick-prev{
-    right:100px;
-    background:none;border:none;}
+    width:75px;
+    height:20px;
+    right:150px;
+    border:none;
+    background: none;
+    background-image: url("../images/arrow_l.png");
+    transform:rotate(90deg) translate(-60px,-100px);}
 #mainslide .slick-next{
-    right:50px;
-    background:none;border:none;}
+    width:75px;
+    height:20px;
+    right:100px;
+    border:none;
+    background: none;
+    background-image: url("../images/arrow_r.png");
+    transform:rotate(90deg) translate(-10px,-35px);}
 #mainslide .slick-dots{
     position:absolute;
-    right:100px;
-    bottom:100px;}
-#mainslide .slick-dots li{display:inline-block;}
+    left:90px;
+    bottom:80px;}
+#mainslide .slick-dots li{
+    display:inline-block;
+}
 #mainslide .slick-dots li button{
-    width:30px;
-    height:30px;
+    width:20px;
+    height:20px;
     text-indent:-99999999px;
-    background: none;
-    border:1px solid #ccc;
-    border-radius:50%;}
+    background:transparent;
+    border:3px solid #ccc;
+    border-radius:50%;
+    margin-right:2px;
+    cursor:pointer;
+}
 #mainslide .slick-dots li.slick-active button{
-    border-color:orange;
+    border:3px solid #dd1d27;
     width:35px;
-    height:35px;
+    height:40px;
 }
 #mainslide .txt_box{
     position:absolute;
@@ -162,20 +180,58 @@
     height: 100%;
     min-height: 1px;*/
 }
-
 #sec3 .slick-slide{
-    text-align: center;
+    margin-top:50px;
+    margin-bottom:100px;
+    /* text-align: center; */
 }
 #sec3 .slick-slide img{
-    width:100%; /* calc(100% - 100px) */
+    width:90%; /* calc(100% - 100px) */
     margin:0 auto;
 }
 #sec3 .slick-arrow{
     position:absolute;
+    z-index:9999;
     bottom:0;
-    z-index:9999;}
+}
 #sec3 .slick-prev{
-    left:0px;}
-#sec3 .slick-next{
+    width:75px;
+    height:20px;
     left:150px;
-    display:none;}
+    border:none;
+    background: none;
+    background-image: url("../images/arrow_l.png");
+    cursor: pointer;}
+#sec3 .slick-next{
+    width:75px;
+    height:20px;
+    left:250px;
+    border:none;
+    background: none;
+    background-image: url("../images/arrow_r.png");
+    cursor: pointer;}
+#sec3 .slick-dots{
+    position:absolute;
+    width:25%;
+    right:100px;
+    bottom:0;
+}
+#sec3 .slick-dots li button{
+    float:left;
+    border:none;
+    background: none;
+    font-size:1.5rem;
+    color:#ccc;
+    cursor: pointer;
+    margin-left:20%;
+    font-family:Century_Gothic;
+
+}
+#sec3 .slick-dots li.slick-active button{
+    color:#181C61;
+    outline:none;
+}
+
+#sec7 .slick-slide img{
+    margin-right: 37px;
+}

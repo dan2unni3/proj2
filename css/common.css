@@ -14,17 +14,25 @@ font-family: 'Galada', cursive; */
 /* 저장된 글꼴 파일 선언*/
 /* @font-face { font-family : font_gothic;    
                 src : url(../font/NanumGothic.ttf); }  */ /* .woff가 가장 표준 */
+                @font-face { font-family : "Century_Gothic";    
+                  src : url(../font/CenturyGothic.woff); }
+                @font-face { font-family : "Century_GothicB";    
+                  src : url(../font/CenturyGothic-bold.woff); }
+
+                
 /* 웹사이트의 글꼴 파일 선언*/
 /* @font-face { font-family : font_gothic;    
                 src : url(http://uhbee.com/nanum.eot) ; }   */
+                @font-face {font-family: "Corbel"; src: url("//db.onlinewebfonts.com/t/51ee907427c788c3ab4442e73286d641.eot"); src: url("//db.onlinewebfonts.com/t/51ee907427c788c3ab4442e73286d641.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/51ee907427c788c3ab4442e73286d641.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/51ee907427c788c3ab4442e73286d641.woff") format("woff"), url("//db.onlinewebfonts.com/t/51ee907427c788c3ab4442e73286d641.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/51ee907427c788c3ab4442e73286d641.svg#Corbel") format("svg"); }
 
 /* 파일이름은 영어, 숫자, 언더바 */
 
 * {margin:0; padding:0;}
 html{font-size:16px;} /* 반응형 rem 이용 */
-body{ font-size:16px;
+body{font-size:16px;
       color:#6f6f6f;
-      font-family: 'Nanum Gothic', sans-serif }
+      font-family: 'Noto Sans KR', sans-serif }
+h2{font-family: Century_GothicB;} /* 큰 제목 */
 ul, ol, li{list-style-type:none}
 img, fieldset{border:none;vertical-align: middle}
 hr {clear:both;border:none}
@@ -47,38 +55,76 @@ button{outline:0}
       overflow:hidden;}
 /* .inner{min-width:1024px;max-width:1280px;margin: 0 auto}*/
 /* 1024~1280 사이에서는 크기가 100%이다 */
-#header .top_icon{float:right;
-      width:300px; height:75px;
+
+
+      /*header*/
+#header{
+      position:fixed;
+      width:100%;
+      height:100px;
+      min-width:1200px;
+      left:0;top:0;
+      z-index:999999;}
+#header #logo{
+      float:left;
+      display:block;}
+#logo img{
+      width:173px;/*높이 삭제*/
+      margin-left:72px; /* 3% */
+      margin-top:32px;}
+#header #nav4{
+      float:right;
+      width:calc(90% - 173px);}
+
+
+@media all and (max-width:1180px){
+      #header #nav4{float:right;width:calc(97% - 173px);}
+}
+@media all and (max-width:1096px) {
+      #logo img{width:150px}
+}
+    /* 네비4 - 메가네비100% */
+    
+    #nav4{
+      position:relative;
       background-color:transparent;}
 
+    #nav4 .depth1{
+      position:static;/* position:static 그대로?????? */ /*position:absolute;top:0px;left:0;*/
+      float:left;
+      } 
 
-    /* 네비4 - 메가네비100% */
-      #header .inner{position:relative;}
-      #nav4 .depth1{float:left;/*position:absolute;top:0px;left:0;*/}
-
-      #nav4 .depth1 > li{float:left;padding:0 20px}
-      #nav4 .depth1 > li > a{display:block;
-                              text-align:center; font-size:1.125rem;color:#474040; 
-                              line-height:75px;/*라인하이트 쓸 거니까 패딩 뺀다*/}
-      #nav4 .depth1 > li > a:after{content:'';height:3px;background-color:#474040;
-                                         position:relative;width:0px;display:block;
-                                         transition:0.5s;}
+      #nav4 .depth1 > li{
+            float:left;
+            padding:0 20px;
+            margin-top:10px;}
+      #nav4 .depth1 > li > a{
+            display:block;
+            text-align:center; 
+            font-size:1.125rem;
+            color:#474040; 
+            line-height:75px;/*라인하이트 쓸 거니까 패딩 뺀다*/}
+      #nav4 .depth1 > li > a:after{
+            content:'';
+            height:3px;
+            background-color:#474040;
+            position:relative;
+            width:0px;
+            display:block;
+            transition:0.5s;}
       #nav4 .depth1 > li:hover > a:after{width:100%;}
       /* #nav4 .depth1 > li:hover > a{border-bottom:3px solid orange;} */
 
 
-    #nav4{position:relative;background-color:transparent;}
-    
-    #nav4 .depth1{
-          position:static;float:left;/* position:static 그대로?????? */
-          } 
     #nav4 .nav_box{position:absolute;
                   /* top:calc(2.8rem + 20px); */; top:78px;
                   left:0 ;width:100% ;background-color:#fff; opacity:60%;
                   z-index:96;
                   display:none; padding:10px 0;}
                    /*display:none으로 안 보이게 한 건 display:block으로 살려야 */
-    #nav4 .depth1 > li:hover .nav_box{display:block;}
+    #nav4 .depth1 > li:hover .nav_box{
+          display:block;
+          margin-top:10px;}
 
     #nav4 .nav_box .depth2{width:100%;margin:0 auto;
                            position:relative;/*text-align:center;*/
@@ -94,70 +140,64 @@ button{outline:0}
     #nav4 .depth2 > li:last-child:after{display:none;}
 
 
-    #nav4 .h_right #req_frm{
-          display:inline-block;}
-
-    #nav4 .h_right > li > a{
-          margin-right:16px;
-    }
-    #nav4 .h_right > li{
-          float:left;
-          font-size: 0.8125rem;
-          color:#474040;
-    }
-
-    #nav4 .top_icon{
-      background-color:yellow;}
-
-
-/*header*/
-#header{
-      position:fixed;
-      width:100%;
-      min-width:1200px;
-      left:0;top:0;
-      z-index:999999;}
-#header #logo{
-      float:left;
-      display:block;}
-#logo img{
-      width:173px;/*높이 삭제*/
-      margin-left:3%;
-      margin-top:15px;}
-#header #nav4{
+    #header .top_icon{
       float:right;
-      width:calc(90% - 173px);}
-
-
-@media all and (max-width:1180px) {
-      #header #nav4{float:right;width:calc(97% - 173px);}  
+      width:373px; 
+      height:75px;
+      margin-right:65px;
+      line-height:75px;
 }
-@media all and (max-width:1096px) {
-      #logo img{width:150px}
+    #header .h_right{
+          float:right;
+      }
+
+      #req_frm .inline input{
+            width:100%; 
+            height:1.5em;
+            background:none; 
+            border:none;
+            outline:0; /* 텍스트 입력시 테두리 없애기 */ }
+
+      #req_frm .inline input::placeholder{
+            color:#474040;}
+    #header #req_frm{
+      display:inline-block;
+      height:50px;
+    }
+    #header .h_right .inline{
+      height:50px;
+      display:inline-block;
+      border-bottom:1px solid #474040;
 }
-
-
-#req_frm .inline input{
-      width:100%; 
-      height:1.5em;
-      background:none; 
+    #header .h_right .btn{
+      width:20px;
+      height:20px;
+      background-color:yellow;
       border:none;
-      outline:0; /* 텍스트 입력시 테두리 없애기 */ }
-  
-#req_frm .inline input::placeholder, #req_frm .multiline textarea::placeholder{
-      color:#000;}
-#req_frm .multiline textarea{
-      width:100%; 
-      height:5em;
-      background:none; 
-      border:none;
-      outline:0;}
+      cursor:pointer;
+}
+    #header .h_right img{
+      width:20px;
+      height:20px;
+    }
+    #header .h_right .flag{
+          margin-top:75px;
+    }
+    #header .h_right > li > a{
+      margin-left:16px;
+    }
+    #header .h_right > li{
+      float:left;
+      font-size: 0.8125rem;
+      color:#474040;
+      margin-top:4px;
+    }
 
 /*footer*/
 #footer{
+      position:relative;
       display:inline-block;
-      height:352px;
-      background-color:#ccc;}
+      height:476px;}
 #footer ul li{
       float:left; color:#000;
       font-size:0.875rem;
@@ -165,6 +205,11 @@ button{outline:0}
       padding-left:10px;
       padding-right:10px;}
 #footer ul li:last-child{border-right:none;}
-#footer .f_logo{width:400px;border-right:none;}
-#footer img{width:50%;}
+#footer .f_logo{
+      position:absolute;
+      width:106px;
+      height:103px;
+      left:72px;
+      top:75px;
+      }
 #footer .f_info{}

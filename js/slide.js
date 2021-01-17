@@ -14,4 +14,16 @@ $(function(){
         slidesToScroll: 1
       });
 
+
+
+
+
+
+
+      //////////////sec2
+
+      $(".photo").click(function(){
+        $("#sec2 .w_box").fadeOut(); 
+      }); // photo click
+
 })
