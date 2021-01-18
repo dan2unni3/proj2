@@ -119,67 +119,89 @@
 }
 
 /**********************Doyon**********************/
-#mainslide.slider{clear:both;}
 
-#mainslide .slick-slide{position:relative;}
+/******************sec1**********************/
+#sec1.slider{clear:both;}
+
+#sec1 .slick-slide{position:relative;}
 /* .slick-slide img에는 float이나 position 주지 않는다 */
-#mainslide .slick-slide img{
+#sec1 .slick-slide img{
     width:100%;
     display:block;} /* 같이 커졌다 작아졌다 하는 애들은 % */
-#mainslide .slick-arrow{
+
+    /* 
+       <슬릭 arrow 버튼 수정하기>
+
+        1. arrow:false
+
+        2. text-indent
+
+        3. button:after{content:'이전';rotate()}
+        button:before{content:'0'}
+
+       */
+
+#sec1 .slick-arrow{
     position:absolute;
     top:50%;z-index:99999;
     cursor:pointer;}
-#mainslide .slick-prev{
+#sec1 .slick-prev{
     width:75px;
     height:20px;
     right:150px;
     border:none;
-    background: none;
-    background-image: url("../images/arrow_l.png");
-    transform:rotate(90deg) translate(-60px,-100px);}
-#mainslide .slick-next{
+    background: url("../images/arrow_l.png") no-repeat;
+    transform:rotate(90deg) translate(-60px,-100px);
+    text-indent:-999999px;
+    z-index: 999999px;;
+}
+#sec1 .slick-next{
     width:75px;
     height:20px;
     right:100px;
     border:none;
-    background: none;
-    background-image: url("../images/arrow_r.png");
-    transform:rotate(90deg) translate(-10px,-35px);}
-#mainslide .slick-dots{
+    background: url("../images/arrow_r.png") no-repeat;
+    transform:rotate(90deg) translate(25px,-50px);
+    text-indent:-999999px;
+    z-index: 999999px;;
+}
+#sec1 .slick-dots{
     position:absolute;
     left:90px;
     bottom:80px;}
-#mainslide .slick-dots li{
+#sec1 .slick-dots li{
     display:inline-block;
 }
-#mainslide .slick-dots li button{
+#sec1 .slick-dots li button{
     width:20px;
     height:20px;
     text-indent:-99999999px;
     background:transparent;
-    border:3px solid #ccc;
+    border:2px solid #ccc;
     border-radius:50%;
     margin-right:2px;
     cursor:pointer;
 }
-#mainslide .slick-dots li.slick-active button{
-    border:3px solid #dd1d27;
-    width:35px;
-    height:40px;
+#sec1 .slick-dots li.slick-active button{
+    border:2px solid #dd1d27;
+    width:30px;
+    height:30px;
 }
-#mainslide .txt_box{
+#sec1 .txt_box{
     position:absolute;
     left:50px;top:50px;
     z-index:999999;
 }
-#mainslide .slick-slide {
+#sec1 .slick-slide {
     position:relative;
     /*display: none;
     float: left;
     height: 100%;
     min-height: 1px;*/
 }
+
+
+/******************sec3**********************/
 #sec3 .slick-slide{
     margin-top:50px;
     margin-bottom:100px;
@@ -188,6 +210,7 @@
 #sec3 .slick-slide img{
     width:90%; /* calc(100% - 100px) */
     margin:0 auto;
+    position:relative;
 }
 #sec3 .slick-arrow{
     position:absolute;
@@ -201,7 +224,8 @@
     border:none;
     background: none;
     background-image: url("../images/arrow_l.png");
-    cursor: pointer;}
+    cursor: pointer;
+    text-indent: -99999999px;}
 #sec3 .slick-next{
     width:75px;
     height:20px;
@@ -209,7 +233,8 @@
     border:none;
     background: none;
     background-image: url("../images/arrow_r.png");
-    cursor: pointer;}
+    cursor: pointer;
+    text-indent: -99999999px;}
 #sec3 .slick-dots{
     position:absolute;
     width:25%;
@@ -223,15 +248,21 @@
     font-size:1.5rem;
     color:#ccc;
     cursor: pointer;
-    margin-left:20%;
-    font-family:Century_Gothic;
+    margin-left:75px;
+    font-family:Corbel;
 
 }
+#sec3 .slick-dots li button:before{
+    content:'0';}
 #sec3 .slick-dots li.slick-active button{
     color:#181C61;
     outline:none;
 }
 
-#sec7 .slick-slide img{
+
+/******************sec7**********************/
+#sec7 .slick-slide{
     margin-right: 37px;
+}
+#sec7 .slick-dots li button{
 }

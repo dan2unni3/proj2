@@ -27,14 +27,17 @@ font-family: 'Galada', cursive; */
 
 /* 파일이름은 영어, 숫자, 언더바 */
 
-* {margin:0; padding:0;}
+* {margin:0; padding:0;outline:none;}
 html{font-size:16px;} /* 반응형 rem 이용 */
 body{font-size:16px;
       color:#6f6f6f;
       font-family: 'Noto Sans KR', sans-serif }
 h2{font-family: Century_GothicB;} /* 큰 제목 */
 ul, ol, li{list-style-type:none}
-img, fieldset{border:none;vertical-align: middle}
+img, fieldset{
+      border:none;
+      vertical-align: middle;
+      outline:none;}
 hr {clear:both;border:none}
 a {color:inherit;text-decoration:none;
    outline:0;}
@@ -64,17 +67,52 @@ button{outline:0}
       height:100px;
       min-width:1200px;
       left:0;top:0;
-      z-index:999999;}
+      z-index:9999999;
+      background-color: transparent;
+      box-shadow: none;
+      color:#474040; 
+}
 #header #logo{
       float:left;
       display:block;}
-#logo img{
+#logo a{
+      display:block;
+      background: url(../images/logo.png) no-repeat ; /* background 뒤에는 size 못 붙여 */ /* background-image에는 no-repeat 안 붙여 */
+      background-size: cover; 
       width:173px;/*높이 삭제*/
+      height:36px;
       margin-left:72px; /* 3% */
       margin-top:32px;}
 #header #nav4{
       float:right;
       width:calc(90% - 173px);}
+
+#header.nav_d1_on{
+      background-color: #fff;
+      box-shadow:0 5px 50px 0 rgba(0,0,0, 0.2);
+}
+#header.nav_d2_on{
+      background-color:transparent;
+      color:#fff;
+}
+#header.nav_d2_on #logo a{
+      background-image: url(../images/logo_w.png);
+}
+
+#header.nav_d2_on #nav4 .depth1 > li > a:after{
+      background-color:#fff;
+}
+#header.nav_d2_on #nav4 .depth1 > li:hover > a:after{width:100%;}
+
+#header.nav_d2_on .h_right .inline{
+      border-bottom:1px solid #fff;
+}
+#header.nav_d2_on #req_frm .inline input::placeholder{
+      color:#fff;
+}
+
+
+
 
 
 @media all and (max-width:1180px){
@@ -102,7 +140,6 @@ button{outline:0}
             display:block;
             text-align:center; 
             font-size:1.125rem;
-            color:#474040; 
             line-height:75px;/*라인하이트 쓸 거니까 패딩 뺀다*/}
       #nav4 .depth1 > li > a:after{
             content:'';
@@ -111,7 +148,8 @@ button{outline:0}
             position:relative;
             width:0px;
             display:block;
-            transition:0.5s;}
+            transition:0.5s;
+            margin-top:12px;}
       #nav4 .depth1 > li:hover > a:after{width:100%;}
       /* #nav4 .depth1 > li:hover > a{border-bottom:3px solid orange;} */
 
@@ -124,7 +162,7 @@ button{outline:0}
                    /*display:none으로 안 보이게 한 건 display:block으로 살려야 */
     #nav4 .depth1 > li:hover .nav_box{
           display:block;
-          margin-top:10px;}
+          margin-top:22px;}
 
     #nav4 .nav_box .depth2{width:100%;margin:0 auto;
                            position:relative;/*text-align:center;*/
@@ -142,10 +180,7 @@ button{outline:0}
 
     #header .top_icon{
       float:right;
-      width:373px; 
-      height:75px;
       margin-right:65px;
-      line-height:75px;
 }
     #header .h_right{
           float:right;
@@ -162,19 +197,28 @@ button{outline:0}
             color:#474040;}
     #header #req_frm{
       display:inline-block;
-      height:50px;
+    }
+    #header .h_right{
+          position:absolute;
+          width:373px;
+          top:35px;
+          right:0;
+          margin-right:65px;
     }
     #header .h_right .inline{
-      height:50px;
+      position:relative;
       display:inline-block;
       border-bottom:1px solid #474040;
+      padding-right:20px;
 }
     #header .h_right .btn{
       width:20px;
       height:20px;
-      background-color:yellow;
+      background-color:transparent;
       border:none;
       cursor:pointer;
+      position:absolute;
+      right:0;
 }
     #header .h_right img{
       width:20px;
@@ -189,7 +233,6 @@ button{outline:0}
     #header .h_right > li{
       float:left;
       font-size: 0.8125rem;
-      color:#474040;
       margin-top:4px;
     }
 
