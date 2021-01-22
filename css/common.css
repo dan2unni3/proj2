@@ -71,6 +71,7 @@ button{outline:0}
       background-color: transparent;
       box-shadow: none;
       color:#474040; 
+      transition:0.5s;
 }
 #header #logo{
       float:left;
@@ -87,13 +88,16 @@ button{outline:0}
       float:right;
       width:calc(90% - 173px);}
 
+
 #header.nav_d1_on{
       background-color: #fff;
       box-shadow:0 5px 50px 0 rgba(0,0,0, 0.2);
+      /* transition:0.5s; */
 }
 #header.nav_d2_on{
       background-color:transparent;
       color:#fff;
+      /* transition:0.5s; */
 }
 #header.nav_d2_on #logo a{
       background-image: url(../images/logo_w.png);
@@ -110,6 +114,9 @@ button{outline:0}
 #header.nav_d2_on #req_frm .inline input::placeholder{
       color:#fff;
 }
+#header.nav_d2_on .h_right .btn{
+      background-image: url(../images/search_w.png);
+}
 
 
 
@@ -124,13 +131,17 @@ button{outline:0}
     /* 네비4 - 메가네비100% */
     
     #nav4{
-      position:relative;
+      /*position:relative;*/
       background-color:transparent;}
 
     #nav4 .depth1{
       position:static;/* position:static 그대로?????? */ /*position:absolute;top:0px;left:0;*/
       float:left;
       } 
+
+      #nav4 .n_box1, #nav4 .n_box2{
+      float:left;
+            }
 
       #nav4 .depth1 > li{
             float:left;
@@ -155,8 +166,12 @@ button{outline:0}
 
 
     #nav4 .nav_box{position:absolute;
-                  /* top:calc(2.8rem + 20px); */; top:78px;
-                  left:0 ;width:100% ;background-color:#fff; opacity:60%;
+                  /* top:calc(2.8rem + 20px); */; 
+                  top:78px;
+                  left:0 ;
+                  width:100% ;
+                  height:300px;
+                  background-color:rgba(255,255,255,0.5); 
                   z-index:96;
                   display:none; padding:10px 0;}
                    /*display:none으로 안 보이게 한 건 display:block으로 살려야 */
@@ -164,19 +179,40 @@ button{outline:0}
           display:block;
           margin-top:22px;}
 
-    #nav4 .nav_box .depth2{width:100%;margin:0 auto;
-                           position:relative;/*text-align:center;*/
-                           padding-left:100px;box-sizing:border-box;}
-    #nav4 .nav_box .depth2:after{content:'';display:none;clear:both;}
-    #nav4 .depth2 > li{display:inline-block;box-sizing:border-box;
-                       padding:10px;} /* 오답노트 - width :20% 삭제 */
-    #nav4 .depth2 > li > a {font-size:0.9375rem;color:#474040;}
+    #nav4 .nav_box .depth2{
+          width:100%;margin:0 auto;
+          position:relative;/*text-align:center;*/
+          padding-left:100px;box-sizing:border-box;}
+    #nav4 .nav_box .depth2:after{
+          content:'';display:none;clear:both;}
+    #nav4 .depth2 > li{
+          box-sizing:border-box;
+          padding: 10px;
+      } /* 오답노트 - width :20% 삭제 */
 
-    #nav4 .depth2 > li:after{content:'';display:inline-block;width:5px;height:5px;
-                             background-color:#ba965a;border-radius:50%;
-                             margin-left:20px;transform:translate(0,-3px)}
+    #nav4 .depth2 > li > a {
+          font-size:0.9375rem;color:#474040;}
+/*
+    #nav4 .depth2 > li:after{
+          content:'';display:inline-block;width:5px;height:5px;
+          background-color:#ba965a;border-radius:50%;
+          margin-left:20px;transform:translate(0,-3px)}
     #nav4 .depth2 > li:last-child:after{display:none;}
+*/
 
+    #nav4 .nav_box img {
+      width: 200px;
+      height: 200px;
+      float: right;
+      top: 5%;
+      right: 5%;
+      margin-top: 34px;
+      position: absolute;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all ease 0.8s;
+      z-index:99999;
+  }
 
     #header .top_icon{
       float:right;
@@ -214,16 +250,20 @@ button{outline:0}
     #header .h_right .btn{
       width:20px;
       height:20px;
-      background-color:transparent;
+      background: none;
+      background-image: url(../images/search_b.png);
+      background-size:20px;
       border:none;
       cursor:pointer;
       position:absolute;
       right:0;
 }
+/*
     #header .h_right img{
       width:20px;
       height:20px;
     }
+*/
     #header .h_right .flag{
           margin-top:75px;
     }
@@ -240,19 +280,39 @@ button{outline:0}
 #footer{
       position:relative;
       display:inline-block;
-      height:476px;}
-#footer ul li{
-      float:left; color:#000;
-      font-size:0.875rem;
-      border-right:1px solid #000;
-      padding-left:10px;
-      padding-right:10px;}
-#footer ul li:last-child{border-right:none;}
-#footer .f_logo{
-      position:absolute;
+      width:100%;
+      height:450px;}
+#footer .f_left{
+      float:left;
       width:106px;
       height:103px;
-      left:72px;
-      top:75px;
-      }
-#footer .f_info{}
+      margin-left:110px;
+      margin-top:74px;
+}
+#footer .f_mid{
+      float:left;
+      width:150px;
+      margin-left:210px;
+      margin-top:85px;
+            }
+#footer .ul_left li{
+      color:#474040;
+      font-size:1.8125rem;
+}
+#footer .f_right{
+      float:left;
+      width:1000px;
+      margin-left:180px;
+      margin-top:85px;
+      color:rgb(110, 109, 109);
+      font-size:1.15rem;
+}
+#footer .f_right p a:hover{
+      color:#EE602B;
+}
+#footer .check{
+      color:#474040;
+}
+#footer .check:hover{
+      color:#EE602B;
+}

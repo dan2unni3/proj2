@@ -126,7 +126,7 @@
 #sec1 .slick-slide{position:relative;}
 /* .slick-slide img에는 float이나 position 주지 않는다 */
 #sec1 .slick-slide img{
-    width:100%;
+    width:100.8%;
     display:block;} /* 같이 커졌다 작아졌다 하는 애들은 % */
 
     /* 
@@ -250,7 +250,6 @@
     cursor: pointer;
     margin-left:75px;
     font-family:Corbel;
-
 }
 #sec3 .slick-dots li button:before{
     content:'0';}
@@ -258,11 +257,57 @@
     color:#181C61;
     outline:none;
 }
-
-
 /******************sec7**********************/
+#sec7 .slick-slider{
+    margin-top:50px;
+    width:1500px;
+    position:relative;
+}
 #sec7 .slick-slide{
-    margin-right: 37px;
+    margin-right:37px;
+}
+#sec7 .slick-slide img{
+    width:450px;
+}
+#sec7 .slick-slide img:hover{
+    background-color:#000;
 }
 #sec7 .slick-dots li button{
+    float:left;
+    margin-top:80px;
+    width:340px;
+    height:8px;
+    background-color:rgb(230, 227, 227);
+    border:none;
+    text-indent: -99999999px;
+    cursor: pointer;
 }
+#sec7 .slick-dots li.slick-active button{
+    background-color:#585151;
+}
+#sec7 .slick-arrow{
+    position:absolute;
+    z-index:9999;
+    bottom:0;
+}
+#sec7 .slick-prev{
+    width:75px;
+    height:20px;
+    bottom:0;
+    border:none;
+    background:  red;
+    background-image: url("../images/arrow_l.png");
+    cursor: pointer;
+    text-indent: -99999999px;
+    display:none !important;
+}
+#sec7 .slick-next{
+    width:75px;
+    height:20px;
+    bottom:-120px;
+    right:130px;
+    border:none;
+    background: none;
+    background-image: url("../images/arrow_r.png");
+    cursor: pointer;
+    text-indent: -99999999px;}
